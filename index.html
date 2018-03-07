@@ -11,10 +11,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizabot/elizabot.js"></SCRIPT>
-<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizabot/elizadata.js"></SCRIPT>
-
-
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="robbiebot/robbiebot.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="robbiebot/robbiedata.js"></SCRIPT>
 
 <script
   src="http://code.jquery.com/jquery-3.3.1.min.js"
@@ -540,48 +538,48 @@ html, body {
 <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
 <!--
 
-var eliza = new ElizaBot();
-var elizaLines = new Array();
+var robbie = new robbieBot();
+var robbieLines = new Array();
 
 var displayCols = 60;
 var displayRows = 20;
 
-function elizaReset() {
-eliza.reset();
-elizaLines.length = 0;
-elizaStep();
+function robbieReset() {
+robbie.reset();
+robbieLines.length = 0;
+robbieStep();
 }
 
-function elizaStep() {
+function robbieStep() {
 var f = document.forms.e_form;
 var userinput = f.e_input.value;
-if (eliza.quit) {
+if (robbie.quit) {
   f.e_input.value = '';
-  if (confirm("This session is over.\nStart over?")) elizaReset();
+  if (confirm("This session is over.\nStart over?")) robbieReset();
   f.e_input.focus();
   return;
 }
 else if (userinput != '') {
   var usr = 'YOU:   ' + userinput;
-  var rpl ='Robbie: ' + eliza.transform(userinput);
-  elizaLines.push(usr);
-  elizaLines.push(rpl);
+  var rpl ='Robbie: ' + robbie.transform(userinput);
+  robbieLines.push(usr);
+  robbieLines.push(rpl);
   // display nicely
   // (fit to textarea with last line free - reserved for extra line caused by word wrap)
   var temp  = new Array();
   var l = 0;
-  for (var i=elizaLines.length-1; i>=0; i--) {
-    l += 1 + Math.floor(elizaLines[i].length/displayCols);
+  for (var i=robbieLines.length-1; i>=0; i--) {
+    l += 1 + Math.floor(robbieLines[i].length/displayCols);
     if (l >= displayRows) break
-    else temp.push(elizaLines[i]);
+    else temp.push(robbieLines[i]);
   }
-  elizaLines = temp.reverse();
-  f.e_display.value = elizaLines.join('\n');
+  robbieLines = temp.reverse();
+  f.e_display.value = robbieLines.join('\n');
 }
-else if (elizaLines.length == 0) {
+else if (robbieLines.length == 0) {
   // no input and no saved lines -> output initial
-  var initial = 'Robbie: ' + eliza.getInitial();
-  elizaLines.push(initial);
+  var initial = 'Robbie: ' + robbie.getInitial();
+  robbieLines.push(initial);
   f.e_display.value = initial + '\n';
 }
 f.e_input.value = '';
@@ -609,7 +607,7 @@ f.e_input.focus();
 
       <div class="chat-logs">
         <H3>Robbie</H3>
-        <FORM NAME="e_form" onsubmit="elizaStep();return false">
+        <FORM NAME="e_form" onsubmit="robbieStep();return false">
         <TR><TD COLSPAN="2"><TEXTAREA placeholder="Robbie:How do you do.  Please tell me your problem.
 "NAME="e_display" COLS="38" ROWS="11"></TEXTAREA></TD></TR>
         <TR VALIGN="middle">
@@ -618,7 +616,7 @@ f.e_input.focus();
             <br />
             <br />
           <center>
-            <TD ALIGN="right"><INPUT TYPE="submit" class="btn btn-primary" VALUE="&nbsp;Talk&nbsp;"> <INPUT TYPE="reset" VALUE="Reset" class="btn btn-danger" onClick="window.setTimeout('elizaReset()',100)"></TD>
+            <TD ALIGN="right"><INPUT TYPE="submit" class="btn btn-primary" VALUE="&nbsp;Talk&nbsp;"> <INPUT TYPE="reset" VALUE="Reset" class="btn btn-danger" onClick="window.setTimeout('robbieReset()',100)"></TD>
           </center>
         </TR>
         </FORM>
