@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
 <style>
 body, html {
     height: 100%;
@@ -14,10 +15,27 @@ body, html {
     background-position: center;
     background-size: cover;
     background-image: url("Parkinsons-Disease.png");
-    min-height: 75%;
+    min-height: 100%;
 }
 .menu {
     display: none;
+}
+
+.divwhite{
+  background:white;
+}
+h5{
+  font-size: 30px;
+  font-weight: bolder;
+  color:red;
+}
+h4{
+  font-size: 30px;
+  font-weight: bolder;
+  color:red;
+}
+p{
+font-family: 'Lobster', cursive;
 }
 </style>
 <body>
@@ -25,17 +43,23 @@ body, html {
 <!-- Links (sit on top) -->
 <div class="w3-top">
   <div class="w3-row w3-padding w3-black">
-    <div class="w3-col s3">
+    <div class="w3-col s2">
       <a href="#" class="w3-button w3-block w3-black">HOME</a>
     </div>
-    <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+    <div class="w3-col s2">
+      <a href="#about" class="w3-button w3-block w3-black">About</a>
     </div>
-    <div class="w3-col s3">
-      <a href="#menu" class="w3-button w3-block w3-black">MENU</a>
+    <div class="w3-col s2">
+      <a href="#menu" class="w3-button w3-block w3-black">Symptoms</a>
     </div>
-    <div class="w3-col s3">
-      <a href="#where" class="w3-button w3-block w3-black">WHERE</a>
+    <div class="w3-col s2">
+      <a href="#faq" class="w3-button w3-block w3-black">FAQ's</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="#faq" class="w3-button w3-block w3-black">Therapy</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="#faq" class="w3-button w3-block w3-black">Pta nhi</a>
     </div>
   </div>
 </div>
@@ -57,7 +81,7 @@ body, html {
 <div class="w3-sand w3-grayscale w3-large">
 
 <!-- About Container -->
-<div class="w3-container" id="about">
+<div class="w3-container divwhite" id="about">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">About Parkinson's</span></h5>
     <p>Parkinson's disease is the second most common neurodegenerative disorder and the most common movement disorder. Characteristics of Parkinson’s disease are progressive loss of muscle control, which leads to trembling of the limbs and head while at rest, stiffness, slowness, and impaired balance. As symptoms worsen, it may become difficult to walk, talk, and complete simple tasks.</p>
@@ -73,69 +97,135 @@ Descriptions of Parkinson's disease date back as far as 5000 BC. Around that tim
 <div class="w3-container" id="menu">
   <div class="w3-content" style="max-width:700px">
 
-    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE MENU</span></h5>
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Symptoms</span></h5>
 
     <div class="w3-row w3-center w3-card w3-padding">
-      <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
-        <div class="w3-col s6 tablink">Eat</div>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'primary');" id="myLink">
+        <div class="w3-col s6 tablink">Primary</div>
       </a>
-      <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
-        <div class="w3-col s6 tablink">Drink</div>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'secondary');">
+        <div class="w3-col s6 tablink">Secondary</div>
       </a>
     </div>
 
-    <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
-      <h5>Bread Basket</h5>
-      <p class="w3-text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p><br>
-
-      <h5>Honey Almond Granola with Fruits</h5>
-      <p class="w3-text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
-
-      <h5>Belgian Waffle</h5>
-      <p class="w3-text-grey">Vanilla flavored batter with malted flour 7.50</p><br>
-
-      <h5>Scrambled eggs</h5>
-      <p class="w3-text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br>
-
-      <h5>Blueberry Pancakes</h5>
-      <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>
+    <div id="primary" class="w3-container menu w3-padding-48 w3-card">
+      <h5>The primary symptoms of Parkinson's disease</h5>
+      <p>The primary symptoms of Parkinson's disease are all related to voluntary and involuntary motor function and usually start on one side of the body. Symptoms are mild at first and will progress over time. Some individuals are more affected than others are. Studies have shown that by the time that primary symptoms appear, individuals with Parkinson's disease will have lost 60% to 80% or more of the dopamine-producing cells in the brain. Characteristic motor symptoms include the following:
+<br><br>
+Tremors: Trembling in fingers, hands, arms, feet, legs, jaw, or head. Tremors most often occur while the individual is resting, but not while involved in a task. Tremors may worsen when an individual is excited, tired, or stressed.<br>
+Rigidity: Stiffness of the limbs and trunk, which may increase during movement. Rigidity may produce muscle aches and pain. Loss of fine hand movements can lead to cramped handwriting (micrographia) and may make eating difficult.<br>
+Bradykinesia: Slowness of voluntary movement. Over time, it may become difficult to initiate movement and to complete movement. Bradykinesia together with stiffness can also affect the facial muscles and result in an expressionless, "mask-like" appearance.<br>
+Postural instability: Impaired or lost reflexes can make it difficult to adjust posture to maintain balance. Postural instability may lead to falls.<br>
+Parkinsonian gait: Individuals with more progressive Parkinson's disease develop a distinctive shuffling walk with a stooped position and a diminished or absent arm swing. It may become difficult to start walking and to make turns. Individuals may freeze in mid-stride and appear to fall forward while walking.</p><br>
     </div>
 
-    <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
-      <h5>Coffee</h5>
-      <p class="w3-text-grey">Regular coffee 2.50</p><br>
+    <div id="secondary" class="w3-container menu w3-padding-48 w3-card">
+      <h5>Secondary symptoms of Parkinson's disease</h5>
+      <p>
 
-      <h5>Chocolato</h5>
-      <p class="w3-text-grey">Chocolate espresso with milk 4.50</p><br>
+While the main symptoms of Parkinson's disease are movement-related, progressive loss of muscle control and continued damage to the brain can lead to secondary symptoms. These vary in severity, and not every individual will experience all of them. Some of the secondary symptoms include:
+<br>
+1) anxiety, insecurity, and stress <br>
+2) confusion, memory loss, and dementia (more common in elderly individuals) <br>
+3) constipation <br>
+4) depression <br>
+5) difficulty swallowing and excessive salivation <br>
+6) diminished sense of smell <br>
+7) increased sweating <br>
+8) male erectile dysfunction <br>
+9) skin problems <br>
+10) slowed, quieter speech, and monotone voice <br>
+11) urinary frequency/urgency <br>
+</p><br>
 
-      <h5>Corretto</h5>
-      <p class="w3-text-grey">Whiskey and coffee 5.00</p><br>
 
-      <h5>Iced tea</h5>
-      <p class="w3-text-grey">Hot tea, except not hot 3.00</p><br>
-
-      <h5>Soda</h5>
-      <p class="w3-text-grey">Coke, Sprite, Fanta, etc. 2.50</p>
     </div>
-    <img src="/w3images/coffeehouse2.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
   </div>
 </div>
 
-<!-- Contact/Area Container -->
-<div class="w3-container" id="where" style="padding-bottom:32px;">
+
+<div class="w3-container divwhite" id="faq">
   <div class="w3-content" style="max-width:700px">
-    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHERE TO FIND US</span></h5>
-    <p>Find us at some address at some place.</p>
-    <div id="googleMap" class="w3-sepia" style="width:100%;height:400px;"></div>
-    <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
-    <p><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
-      <p><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></p>
-    </form>
+    <h3 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">FAQ's</span></h3>
+    <h4>What causes Parkinson's disease?</h4>
+    <p>
+      A substance called dopamine acts as a messenger between two brain areas - the substantia nigra and the corpus striatum - to produce smooth, controlled movements. Most of the movement-related symptoms of Parkinson's disease are caused by a lack of dopamine due to the loss of dopamine-producing cells in the substantia nigra. When the amount of dopamine is too low, communication between the substantia nigra and corpus striatum becomes ineffective, and movement becomes impaired; the greater the loss of dopamine, the worse the movement-related symptoms. Other cells in the brain also degenerate to some degree and may contribute to non-movement related symptoms of Parkinson's disease.
+<br>
+Although it is well known that lack of dopamine causes the motor symptoms of Parkinson's disease, it is not clear why the dopamine-producing brain cells deteriorate. Genetic and pathological studies have revealed that various dysfunctional cellular processes, inflammation, and stress can all contribute to cell damage. In addition, abnormal clumps called Lewy bodies, which contain the protein alpha-synuclein, are found in many brain cells of individuals with Parkinson's disease. The function of these clumps in regards to Parkinson's disease is not understood. In general, scientists suspect that dopamine loss is due to a combination of genetic and environmental factors.
+  </p>
+  <br><br>
+  <h4>What are the stages of Parkinson's disease?</h4>
+  <p>Researchers may disagree on the number of stages of Parkinson’s disease (range from 3-5 stages), however, they all agree that the disease is progressive with symptoms that usually occur in one stage, and may overlap or occur in another stage. The stage increase in number value for all stage naming systems reflect the increasing severity of the disease. The stages used by the Parkinson’s Foundation will be reviewed.
+<br>
+Stage 1: mild symptoms (tremors and/or movement symptoms like swinging arm while walking) do not interfere with daily activities and occur on one side of the body.<br>
+Stage 2: Symptoms worsen with walking problems and both sides of the body are affected.<br>
+Stage 3: Main symptoms worsen with loss of balance and slowness of movement.<br>
+Stage 4: Severity of symptoms require help; usually the person cannot live alone.<br>
+Stage 5: Caregiver is needed for all activities. The individual may not be able to stand or walk, and may be bedridden, and have hallucinations and delusions.</p><br><br>
+
+<h4>Is Parkinson's disease inherited (genetic)?</h4>
+<p>In most individuals, Parkinson's disease is idiopathic, which means that it arises sporadically with no known cause. However, some of individuals diagnosed with Parkinson's also have family members with the disease. By studying families with hereditary Parkinson's disease, scientists have identified several genes that are associated with the disorder. Studying these genes helps understand the cause of Parkinson's disease and may lead to new therapies. So far, five genes have been identified that are definitively associated with Parkinson's disease.
+<br>
+SNCA (synuclein, alpha non A4 component of amyloid precursor): SNCA makes the protein alpha-synuclein. In brain cells of individuals with Parkinson's disease, this protein aggregates in clumps called Lewy bodies. Mutations in the SNCA gene are found in early-onset Parkinson's disease.
+<br>
+PARK2 (Parkinson's disease autosomal recessive, juvenile 2): The PARK2 gene makes the protein parkin. Mutations of the PARK2 gene are mostly found in individuals with juvenile Parkinson's disease. Parkin normally helps cells break down and recycle proteins.
+<br>
+PARK7 (Parkinson's disease autosomal recessive, early onset 7): PARK7 mutations are found in early-onset Parkinson's disease. The PARK7 gene makes the DJ-1 protein, which may protect cells from oxidative stress.
+<br>
+PINK1 (PTEN-induced putative kinase 1): Mutations of this gene are found in early-onset Parkinson's disease. The exact function of the protein made by PINK1 is not known, but it may protect structures within the cell called mitochondria from stress.
+<br>
+LRRK2 (leucine-rich repeat kinase 2): LRRK2 makes the protein dardarin. Mutations in the LRRK2 gene have been linked to late-onset Parkinson's disease.
+<br>
+Several other chromosome regions and the genes GBA (glucosidase beta acid), SNCAIP (synuclein alpha interacting protein), and UCHL1 (ubiquitin carboxyl-terminal esterase L1) may also be linked to Parkinson's disease.</p>
+<br><br>
+<h4>Who gets Parkinson's disease?</h4>
+<p>Age is the largest risk factor for the development and progression of Parkinson's disease. Most people who develop Parkinson's disease are older than 60 years of age.<br>
+Men are affected about 1.5 to 2 times more often than women.<br>
+A small number of individuals are at increased risk because of a family history of the disorder.<br>
+Head trauma , illness, or exposure to environmental toxins such as pesticides and herbicides may be a risk factor.</p><br><br>
+
+<h4>What other conditions resemble Parkinson's disease?</h4>
+<p>In its early stages, Parkinson's disease can resemble a number of other conditions with Parkinson-like symptoms known as Parkinsonism. These conditions include multiple system atrophy, progressive supranuclear palsy, corticobasal degeneration, Lewy body dementia, stroke, encephalitis (inflammation of the brain), and head trauma. Alzheimer's disease and primary lateral sclerosis can also be mistaken for Parkinson's disease. Other similar conditions include essential tremor, dystonic tremor, vascular Parkinsonism, and drug-induced Parkinsonism.</p><br><br>
+
+<h4>Is there a test to diagnose Parkinson's disease?</h4>
+<p>An early and accurate diagnosis of Parkinson's disease is important in developing good treatment strategies to maintain a high quality of life for as long as possible. However, there is no test to diagnose Parkinson's disease with certainty (except after the individual has passed away). A diagnosis of Parkinson's disease - especially in the early phase - can be challenging due to similarities to related movement disorders and other conditions with Parkinson-like symptoms. Individuals may sometimes be misdiagnosed as having another disorder, and sometimes individuals with Parkinson-like symptoms may be inaccurately diagnosed as having Parkinson's disease. It is therefore important to re-evaluate individuals in the early phase on a regular basis to rule out other conditions that may be responsible for the symptoms.
+
+A neurologist who specializes in movement disorders will be able to make the most accurate diagnosis. An initial assessment is made based on medical history, a neurological exam, and the symptoms present. For the medical history, it is important to know whether other family members have Parkinson's disease, what types of medication have been or are being taken, and whether there was exposure to toxins or repeated head trauma previously. A neurological exam may include an evaluation of coordination, walking, and fine motor tasks involving the hands.
+
+Several guidelines have been published to assist in the diagnosis of Parkinson's disease. These include the Hoehn and Yahr scale and the Unified Parkinson's Disease Rating Scale. Tests are used to measure mental capacity, behavior, mood, daily living activities, and motor function. They can be very helpful in the initial diagnosis, to rule out other disorders, as well as in monitoring the progression of the disease to make therapeutic adjustments. Brain scans and other laboratory tests are also sometimes carried out, mostly to detect other disorders resembling Parkinson's disease.
+
+The diagnosis of Parkinson's disease is more likely if:
+
+at least two of the three major symptoms are present (tremor at rest, muscle rigidity, and slowness);<br>
+the onset of symptoms started on one side of the body;<br>
+symptoms are not due to secondary causes such as medication or strokes in the area controlling movement; and <br>
+symptoms are significantly improved with levodopa.</p><br><br>
+
+<h4>What is the treatment for Parkinson's disease?</h4>
+<p>There is currently no treatment to cure Parkinson's disease. Several therapies are available to delay the onset of motor symptoms and to ameliorate motor symptoms. All of these therapies are designed to increase the amount of dopamine in the brain either by replacing dopamine, mimicking dopamine, or prolonging the effect of dopamine by inhibiting its breakdown. Studies have shown that early therapy in the non-motor stage can delay the onset of motor symptoms, thereby extending quality of life.
+
+The most effective therapy for Parkinson's disease is levodopa (Sinemet), which is converted to dopamine in the brain. However, because long-term treatment with levodopa can lead to unpleasant side effects (a shortened response to each dose, painful cramps, and involuntary movements), its use is often delayed until motor impairment is more severe. Levodopa is frequently prescribed together with carbidopa (Sinemet), which prevents levodopa from being broken down before it reaches the brain. Co-treatment with carbidopa allows for a lower levodopa dose, thereby reducing side effects.<br>
+
+In earlier stages of Parkinson's disease, substances that mimic the action of dopamine (dopamine agonists), and substances that reduce the breakdown of dopamine (monoamine oxidase type B (MAO-B) inhibitors) can be very efficacious in relieving motor symptoms. Unpleasant side effects of these preparations are quite common, including swelling caused by fluid accumulation in body tissues, drowsiness, constipation, dizziness, hallucinations, and nausea.<br>
+
+For some individuals with advanced, virtually unmanageable motor symptoms, surgery may be an option. In deep brain stimulation (DBS), the surgeon implants electrodes to stimulate areas of the brain involved in movement. In another type of surgery, specific areas in the brain that cause Parkinson's symptoms are destroyed.<br>
+
+An alternative approach that has been explored is the use of dopamine-producing cells derived from stem cells. While stem cell therapy has great potential, more research is required before such cells can become of therapeutic value in the treatment of Parkinson's disease.<br>
+
+In addition to medication and surgery, general lifestyle changes (rest and exercise), physical therapy, occupational therapy, and speech therapy may be beneficial.<br>
+
+</p><br><br>
+
+<h4>Can Parkinson's disease be prevented?</h4>
+<p>Scientists currently believe that Parkinson's disease is triggered through a complex combination of genetic susceptibility and exposure to environmental factors such as toxins, illness, and trauma. Since the exact causes are not known, Parkinson's disease is at present not preventable.</p><br><br>
+</div>
+</div>
+
+<!-- Contact/Area Container -->
+<div class="w3-container divgrey" id="where" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Let's have some fun...</span></h5>
+    <p>game iframe</p>
   </div>
 </div>
 
@@ -143,8 +233,8 @@ Descriptions of Parkinson's disease date back as far as 5000 BC. Around that tim
 </div>
 
 <!-- Footer -->
-<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+<footer class="w3-center w3-black w3-padding-48 w3-large">
+  <p>Designed & Developed by  <a href="#" title="CypherOps" target="_blank" class="w3-hover-text-green">CypherOps</a></p>
 </footer>
 
 <!-- Add Google Maps -->
