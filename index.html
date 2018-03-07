@@ -11,6 +11,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizabot/elizabot.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizabot/elizadata.js"></SCRIPT>
+
+
+
 <script
   src="http://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -76,7 +81,7 @@ font-family: 'Lobster', cursive;
       <a href="#Therapy" class="w3-button w3-block w3-black">Therapy</a>
     </div>
     <div class="w3-col s2">
-      <a href="#faq" class="w3-button w3-block w3-black">Pta nhi</a>
+      <a id="robbie" class="w3-button w3-block w3-black " >Robbie</a>
     </div>
   </div>
 </div>
@@ -532,7 +537,59 @@ html, body {
 }
 </style>
 
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
 
+var eliza = new ElizaBot();
+var elizaLines = new Array();
+
+var displayCols = 60;
+var displayRows = 20;
+
+function elizaReset() {
+eliza.reset();
+elizaLines.length = 0;
+elizaStep();
+}
+
+function elizaStep() {
+var f = document.forms.e_form;
+var userinput = f.e_input.value;
+if (eliza.quit) {
+  f.e_input.value = '';
+  if (confirm("This session is over.\nStart over?")) elizaReset();
+  f.e_input.focus();
+  return;
+}
+else if (userinput != '') {
+  var usr = 'YOU:   ' + userinput;
+  var rpl ='Robbie: ' + eliza.transform(userinput);
+  elizaLines.push(usr);
+  elizaLines.push(rpl);
+  // display nicely
+  // (fit to textarea with last line free - reserved for extra line caused by word wrap)
+  var temp  = new Array();
+  var l = 0;
+  for (var i=elizaLines.length-1; i>=0; i--) {
+    l += 1 + Math.floor(elizaLines[i].length/displayCols);
+    if (l >= displayRows) break
+    else temp.push(elizaLines[i]);
+  }
+  elizaLines = temp.reverse();
+  f.e_display.value = elizaLines.join('\n');
+}
+else if (elizaLines.length == 0) {
+  // no input and no saved lines -> output initial
+  var initial = 'Robbie: ' + eliza.getInitial();
+  elizaLines.push(initial);
+  f.e_display.value = initial + '\n';
+}
+f.e_input.value = '';
+f.e_input.focus();
+}
+
+//-->
+</SCRIPT>
 
 
 <div id="chat-circle" class="btn btn-raised">
@@ -540,26 +597,35 @@ html, body {
 		    <i class="fa fa-qq"></i>
 	</div>
 
-  <div class="chat-box">
+  <div class="chat-box" >
     <div class="chat-box-header">
-      ChatBot
-      <span class="chat-box-toggle"><i class="material-icons">close</i></span>
-    </div>
-    <div class="chat-box-body">
-      <p>
-        hello
-      </p>
-      <div class="chat-box-overlay">
-      </div>
-      <div class="chat-logs">
+      <span class="chat-box-toggle"><i class="fa fa-close"></i></span>
+      <center>
+        ROBBIE
+      </center>
 
+    </div>
+
+
+      <div class="chat-logs">
+        <H3>Robbie</H3>
+        <FORM NAME="e_form" onsubmit="elizaStep();return false">
+        <TR><TD COLSPAN="2"><TEXTAREA placeholder="Robbie:How do you do.  Please tell me your problem.
+"NAME="e_display" COLS="38" ROWS="11"></TEXTAREA></TD></TR>
+        <TR VALIGN="middle">
+          <br />
+          <TD><INPUT TYPE="text" NAME="e_input" SIZE="38"></TD>
+            <br />
+            <br />
+          <center>
+            <TD ALIGN="right"><INPUT TYPE="submit" class="btn btn-primary" VALUE="&nbsp;Talk&nbsp;"> <INPUT TYPE="reset" VALUE="Reset" class="btn btn-danger" onClick="window.setTimeout('elizaReset()',100)"></TD>
+          </center>
+        </TR>
+        </FORM>
       </div><!--chat-log -->
     </div>
     <div class="chat-input">
-      <form>
-        <input type="text" id="chat-input" placeholder="Send a message..."/>
-      <button type="submit" class="chat-submit" id="chat-submit"><i class="material-icons">send</i></button>
-      </form>
+
     </div>
 
 
@@ -568,85 +634,7 @@ html, body {
 
 </div>
 <script>$(function() {
-  var INDEX = 0;
-  $("#chat-submit").click(function(e) {
-    e.preventDefault();
-    var msg = $("#chat-input").val();
-    if(msg.trim() == ''){
-      return false;
-    }
-    generate_message(msg, 'self');
-    var buttons = [
-        {
-          name: 'Existing User',
-          value: 'existing'
-        },
-        {
-          name: 'New User',
-          value: 'new'
-        }
-      ];
-    setTimeout(function() {
-      generate_message(msg, 'user');
-    }, 1000)
 
-  })
-
-  function generate_message(msg, type) {
-    INDEX++;
-    var str="";
-    str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg "+type+"\">";
-    str += "          <span class=\"msg-avatar\">";
-    str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
-    str += "          <\/span>";
-    str += "          <div class=\"cm-msg-text\">";
-    str += msg;
-    str += "          <\/div>";
-    str += "        <\/div>";
-    $(".chat-logs").append(str);
-    $("#cm-msg-"+INDEX).hide().fadeIn(300);
-    if(type == 'self'){
-     $("#chat-input").val('');
-    }
-    $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);
-  }
-
-  function generate_button_message(msg, buttons){
-    /* Buttons should be object array
-      [
-        {
-          name: 'Existing User',
-          value: 'existing'
-        },
-        {
-          name: 'New User',
-          value: 'new'
-        }
-      ]
-    */
-    INDEX++;
-    var btn_obj = buttons.map(function(button) {
-       return  "              <li class=\"button\"><a href=\"javascript:;\" class=\"btn btn-primary chat-btn\" chat-value=\""+button.value+"\">"+button.name+"<\/a><\/li>";
-    }).join('');
-    var str="";
-    str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg user\">";
-    str += "          <span class=\"msg-avatar\">";
-    str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
-    str += "          <\/span>";
-    str += "          <div class=\"cm-msg-text\">";
-    str += msg;
-    str += "          <\/div>";
-    str += "          <div class=\"cm-msg-button\">";
-    str += "            <ul>";
-    str += btn_obj;
-    str += "            <\/ul>";
-    str += "          <\/div>";
-    str += "        <\/div>";
-    $(".chat-logs").append(str);
-    $("#cm-msg-"+INDEX).hide().fadeIn(300);
-    $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);
-    $("#chat-input").attr("disabled", true);
-  }
 
   $(document).delegate(".chat-btn", "click", function() {
     var value = $(this).attr("chat-value");
@@ -659,7 +647,10 @@ html, body {
     $("#chat-circle").toggle('scale');
     $(".chat-box").toggle('scale');
   })
-
+  $("#robbie").click(function() {
+    $("#chat-circle").toggle('scale');
+    $(".chat-box").toggle('scale');
+  })
   $(".chat-box-toggle").click(function() {
     $("#chat-circle").toggle('scale');
     $(".chat-box").toggle('scale');
