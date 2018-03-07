@@ -469,17 +469,9 @@ var robbieKeywords = [
      "goto what"
   ]]
 ]],
-["what", 0, [
+["what is parkinson's disease", 0, [
  ["*", [
-     "Why do you ask ?",
-     "Does that question interest you ?",
-     "What is it you really want to know ?",
-     "Are such questions much on your mind ?",
-     "What answer would please you most ?",
-     "What do you think ?",
-     "What comes to mind when you ask that ?",
-     "Have you asked such questions before ?",
-     "Have you asked anyone else ?"
+     "Parkinson's disease is the second most common neurodegenerative disorder and the most common movement disorder. Characteristics of Parkinson’s disease are progressive loss of muscle control, which leads to trembling of the limbs and head while at rest, stiffness, slowness, and impaired balance. As symptoms worsen, it may become difficult to walk, talk, and complete simple tasks."
   ]]
 ]],
 ["who", 0, [
@@ -487,9 +479,9 @@ var robbieKeywords = [
      "goto what"
   ]]
 ]],
-["when", 0, [
+["when does it occur", 0, [
  ["when *", [
-     "goto what"
+     "Researchers may disagree on the number of stages of Parkinson’s disease (range from 3-5 stages), however, they all agree that the disease is progressive with symptoms that usually occur in one stage, and may overlap or occur in another stage. The stage increase in number value for all stage naming systems reflect the increasing severity of the disease. The stages used by the Parkinson’s Foundation will be reviewed. Stage 1: mild symptoms (tremors and/or movement symptoms like swinging arm while walking) do not interfere with daily activities and occur on one side of the body.Stage 2: Symptoms worsen with walking problems and both sides of the body are affected.Stage 3: Main symptoms worsen with loss of balance and slowness of movement.Stage 4: Severity of symptoms require help; usually the person cannot live alone.Stage 5: Caregiver is needed for all activities. The individual may not be able to stand or walk, and may be bedridden, and have hallucinations and delusions."
   ]]
 ]],
 ["where", 0, [
@@ -499,15 +491,17 @@ var robbieKeywords = [
 ]],
 ["how", 0, [
  ["how *", [
-     "goto what"
+     "In most individuals, Parkinson's disease is idiopathic, which means that it arises sporadically with no known cause. However, some of individuals diagnosed with Parkinson's also have family members with the disease. By studying families with hereditary Parkinson's disease, scientists have identified several genes that are associated with the disorder. Studying these genes helps understand the cause of Parkinson's disease and may lead to new therapies. So far, five genes have been identified that are definitively associated with Parkinson's disease. "
   ]]
 ]],
-["because", 0, [
+["it occurs because of", 0, [
  ["*", [
-     "Is that the real reason ?",
-     "Don't any other reasons come to mind ?",
-     "Does that reason seem to explain anything else ?",
-     "What other reasons might there be ?"
+     "In most individuals, Parkinson's disease is idiopathic, which means that it arises sporadically with no known cause. However, some of individuals diagnosed with Parkinson's also have family members with the disease. By studying families with hereditary Parkinson's disease, scientists have identified several genes that are associated with the disorder. Studying these genes helps understand the cause of Parkinson's disease and may lead to new therapies. So far, five genes have been identified that are definitively associated with Parkinson's disease. "
+  ]]
+]],
+["symptoms of", 0, [
+ ["*", [
+     "The primary symptoms of Parkinson's disease are all related to voluntary and involuntary motor function and usually start on one side of the body. Symptoms are mild at first and will progress over time. Some individuals are more affected than others are. Studies have shown that by the time that primary symptoms appear, individuals with Parkinson's disease will have lost 60% to 80% or more of the dopamine-producing cells in the brain. secondary symptoms:Some of the secondary symptoms include:  anxiety, insecurity, and stress , confusion, memory loss, and dementia (more common in elderly individuals) ,constipation , depression,  difficulty swallowing and excessive salivation ,diminished sense of smell ,increased sweating , male erectile dysfunction ,skin problems , slowed, quieter speech, and monotone voice , urinary frequency/urgency  "
   ]]
 ]],
 ["why", 0, [
@@ -592,7 +586,13 @@ var robbieKeywords = [
      "Could there be some connection, do you suppose ?",
      "How ?"
   ]]
+]],
+["parkinson's disease", 0, [
+ ["*", [
+     "Parkinson's disease is the second most common neurodegenerative disorder and the most common movement disorder. Characteristics of Parkinson’s disease are progressive loss of muscle control, which leads to trembling of the limbs and head while at rest, stiffness, slowness, and impaired balance. As symptoms worsen, it may become difficult to walk, talk, and complete simple tasks."
+  ]]
 ]]
+
 
 ];
 
